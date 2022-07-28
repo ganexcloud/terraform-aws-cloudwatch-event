@@ -1,59 +1,59 @@
 output "name" {
   description = "(Optional) The name of the rule. If omitted, Terraform will assign a random, unique name. Conflicts with name_prefix."
-  value       = aws_cloudwatch_event_rule.main.name
+  value       = aws_cloudwatch_event_rule.this.name
 }
 
 output "name_prefix" {
   description = "(Optional) Creates a unique name beginning with the specified prefix. Conflicts with name."
-  value       = aws_cloudwatch_event_rule.main.name_prefix
+  value       = aws_cloudwatch_event_rule.this.name_prefix
 }
 
 output "schedule_expression" {
   description = "(Optional) The scheduling expression. For example, cron(0 20 * * ? *) or rate(5 minutes). At least one of schedule_expression or event_pattern is required. Can only be used on the default event bus. For more information, refer to the AWS documentation Schedule Expressions for Rules."
-  value       = aws_cloudwatch_event_rule.main.schedule_expression
+  value       = aws_cloudwatch_event_rule.this.schedule_expression
 }
 
 output "event_bus_name" {
   description = "(Optional) The event bus to associate with this rule. If you omit this, the default event bus is used."
-  value       = aws_cloudwatch_event_rule.main.event_bus_name
+  value       = aws_cloudwatch_event_rule.this.event_bus_name
 }
 
 output "event_pattern" {
   description = "(Optional) The event pattern described a JSON object. At least one of schedule_expression or event_pattern is required. See full documentation of Events and Event Patterns in EventBridge for details."
-  value       = aws_cloudwatch_event_rule.main.event_pattern
+  value       = aws_cloudwatch_event_rule.this.event_pattern
 }
 
 output "description" {
   description = "(Optional) The description of the rule."
-  value       = aws_cloudwatch_event_rule.main.description
+  value       = aws_cloudwatch_event_rule.this.description
 }
 
 output "role_arn" {
   description = "(Optional) The Amazon Resource Name (ARN) associated with the role that is used for target invocation."
-  value       = aws_cloudwatch_event_rule.main.role_arn
+  value       = aws_cloudwatch_event_rule.this.role_arn
 }
 
 output "is_enabled" {
   description = "(Optional) Whether the rule should be enabled (defaults to true)."
-  value       = aws_cloudwatch_event_rule.main.is_enabled
+  value       = aws_cloudwatch_event_rule.this.is_enabled
 }
 
 output "tags" {
   description = "(Optional) A map of tags to assign to the resource. If configured with a provider default_tags configuration block present, tags with matching keys will overwrite those defined at the provider-level."
-  value       = aws_cloudwatch_event_rule.main.tags
+  value       = aws_cloudwatch_event_rule.this.tags
 }
 
 output "id" {
   description = "The name of the rule."
-  value       = aws_cloudwatch_event_rule.main.id
+  value       = aws_cloudwatch_event_rule.this.id
 }
 
 output "arn" {
   description = "The Amazon Resource Name (ARN) of the rule."
-  value       = aws_cloudwatch_event_rule.main.arn
+  value       = aws_cloudwatch_event_rule.this.arn
 }
 
 output "tags_all" {
   description = "A map of tags assigned to the resource, including those inherited from the provider default_tags configuration block."
-  value       = aws_cloudwatch_event_rule.main.tags_all
+  value       = aws_cloudwatch_event_rule.this.tags_all
 }

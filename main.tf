@@ -1,4 +1,4 @@
-resource "aws_cloudwatch_event_rule" "main" {
+resource "aws_cloudwatch_event_rule" "this" {
   name                = var.name
   name_prefix         = var.name_prefix
   schedule_expression = var.schedule_expression
@@ -10,9 +10,9 @@ resource "aws_cloudwatch_event_rule" "main" {
   tags                = var.tags
 }
 
-resource "aws_cloudwatch_event_target" "main" {
+resource "aws_cloudwatch_event_target" "this" {
   count      = var.target_arn != null ? 1 : 0
-  rule       = aws_cloudwatch_event_rule.main.name
+  rule       = aws_cloudwatch_event_rule.this.name
   target_id  = var.target_id
   arn        = var.target_arn
   input      = var.target_input
